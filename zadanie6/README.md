@@ -4,22 +4,22 @@ Konfiguracja jakości dla projektów z zadań 3–5 (Kotlin, Go, JavaScript/Type
 
 ## Wymagania
 
-| Punkty | Opis | Lokalizacja |
-|--------|------|-------------|
-| 3.0 | Husky + lint-staged przed commitem | `/package.json`, `.husky/pre-commit` |
-| 3.5 | Eliminacja bugów Sonar (klient React) | `zadanie5/client/` + ESLint |
-| 4.0 | CodeQL — skan i poprawka OSS | `codeql-oss/`, workflow `codeql.yml` |
-| 4.5 | Code Smell + badge Sonar (kotlin, go, js) | `sonar-project.properties`, workflow `sonarcloud.yml` |
-| 5.0 | GitHub Actions: linter + CodeQL | `.github/workflows/` |
+| Punkty | Opis                                      | Lokalizacja                                           |
+| ------ | ----------------------------------------- | ----------------------------------------------------- |
+| 3.0    | Husky + lint-staged przed commitem        | `/package.json`, `.husky/pre-commit`                  |
+| 3.5    | Eliminacja bugów Sonar (klient React)     | `zadanie5/client/` + ESLint                           |
+| 4.0    | CodeQL — skan i poprawka OSS              | `codeql-oss/`, workflow `codeql.yml`                  |
+| 4.5    | Code Smell + badge Sonar (kotlin, go, js) | `sonar-project.properties`, workflow `sonarcloud.yml` |
+| 5.0    | GitHub Actions: linter + CodeQL           | `.github/workflows/`                                  |
 
 ## Sprawdzenie punktów w projektach
 
-| Zadanie | 3.0 | 3.5 | 4.0 | 4.5 | 5.0 |
-|---------|-----|-----|-----|-----|-----|
+| Zadanie              | 3.0   | 3.5            | 4.0    | 4.5   | 5.0     |
+| -------------------- | ----- | -------------- | ------ | ----- | ------- |
 | JS (zadanie5 client) | husky | ESLint / Sonar | CodeQL | Sonar | Actions |
-| JS (zadanie5 server) | husky | ESLint | CodeQL | Sonar | Actions |
-| Kotlin (zadanie3) | — | detekt CI | CodeQL | Sonar | Actions |
-| Go (zadanie4) | gofmt | golangci | CodeQL | Sonar | Actions |
+| JS (zadanie5 server) | husky | ESLint         | CodeQL | Sonar | Actions |
+| Kotlin (zadanie3)    | —     | detekt CI      | CodeQL | Sonar | Actions |
+| Go (zadanie4)        | gofmt | golangci       | CodeQL | Sonar | Actions |
 
 ## Husky (lokalnie)
 
@@ -34,24 +34,3 @@ git commit -m "test"   # uruchomi lint-staged
 cd zadanie5/client && npm install && npm run lint
 cd zadanie5/server && npm install && npm run lint
 ```
-
-## SonarCloud
-
-1. Projekt na [sonarcloud.io](https://sonarcloud.io) — klucz `zezuul_po26`, organizacja `zezuul`.
-2. GitHub → **Settings → Secrets → Actions** → secret `SONAR_TOKEN` (token z SonarCloud: *My Account → Security*).
-3. Push na `main` lub ręcznie: **Actions → SonarCloud → Run workflow**.
-
-### Badge pokazuje „Quality Gate not computed”
-
-To normalne **przed pierwszym udanym skanem**. Zrób:
-
-1. Sprawdź workflow **SonarCloud** na GitHubie — musi być **zielony**.
-2. Jeśli czerwony: brak lub zły `SONAR_TOKEN`, albo błąd builda (Gradle/Go).
-3. Po zielonym jobie odczekaj 2–5 min i odśwież [podsumowanie projektu](https://sonarcloud.io/summary/new_code?id=zezuul_po26).
-4. Badge w `README` zmieni się na **Passed** / **Failed** dopiero po obliczeniu Quality Gate.
-
-Badge w głównym `README.md`.
-
-## CodeQL
-
-Automatycznie na push/PR (`codeql.yml`). Przykład poprawki OSS: [codeql-oss/](codeql-oss/).
