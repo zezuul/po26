@@ -90,5 +90,3 @@
 - ~~**5.0** Heroku~~ — pominięte
 
 **Kod:** [zadanie7/](zadanie7/)
-
-Windows (Docker): `cd zadanie7 && run.bat` → http://localhost:8080
