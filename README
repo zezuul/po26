@@ -71,15 +71,10 @@
 
 # Zadanie 6 — Zapaszki (jakość kodu)
 
-- **3.0** Husky + lint-staged — lint przed commitem
-- **3.5** Sonar / ESLint — bugi w aplikacji klienckiej (`zadanie5/client`)
-- **4.0** CodeQL — skan i poprawka OSS ([codeql-oss/](zadanie6/codeql-oss/))
-- **4.5** Code Smell (Kotlin, Go, JS) + badge SonarCloud (powyżej)
-- **5.0** GitHub Actions — [lint.yml](.github/workflows/lint.yml), [codeql.yml](.github/workflows/codeql.yml)
+- ✅ **3.0** Husky + lint-staged — lint przed commitem — [commit 6](https://github.com/zezuul/po26/commit/02631b3111400ff6f2a57bab102c3a1d20e1bdad)
+- ✅ **3.5** Sonar / ESLint — bugi w aplikacji klienckiej (`zadanie5/client`) — [commit 6](https://github.com/zezuul/po26/commit/02631b3111400ff6f2a57bab102c3a1d20e1bdad)
+- ✅ **4.0** CodeQL — skan i poprawka OSS ([codeql-oss/](zadanie6/codeql-oss/)) — [commit 6](https://github.com/zezuul/po26/commit/02631b3111400ff6f2a57bab102c3a1d20e1bdad)
+- ✅ **4.5** Code Smell (Kotlin, Go, JS) + badge SonarCloud — [commit 6](https://github.com/zezuul/po26/commit/02631b3111400ff6f2a57bab102c3a1d20e1bdad)
+- ✅ **5.0** GitHub Actions — [lint.yml](.github/workflows/lint.yml), [codeql.yml](.github/workflows/codeql.yml) — [commit 6](https://github.com/zezuul/po26/commit/02631b3111400ff6f2a57bab102c3a1d20e1bdad)
 
 **Kod:** [zadanie6/](zadanie6/)
-
-```bash
-npm install          # husky w katalogu głównym
-cd zadanie5/client && npm run lint
-```
