@@ -78,3 +78,17 @@
 - ✅ **5.0** GitHub Actions — [lint.yml](.github/workflows/lint.yml), [codeql.yml](.github/workflows/codeql.yml) — [commit 6](https://github.com/zezuul/po26/commit/02631b3111400ff6f2a57bab102c3a1d20e1bdad)
 
 **Kod:** [zadanie6/](zadanie6/)
+
+---
+
+# Zadanie 7 — Vapor (Swift) + Leaf + Fluent + Redis
+
+- ✅ **3.0** CRUD Produktów — Fluent ORM — [commit 7](https://github.com/zezuul/po26/commit/8320b3056984ff9c6763df1433142b94066ca9f6)
+- ✅ **3.5** Szablony Leaf dla wszystkich widoków — [commit 7](https://github.com/zezuul/po26/commit/8320b3056984ff9c6763df1433142b94066ca9f6)
+- ✅ **4.0** Model Kategorii + relacja z produktami — [commit 7](https://github.com/zezuul/po26/commit/8320b3056984ff9c6763df1433142b94066ca9f6)
+- ✅ **4.5** Redis — cache list produktów/kategorii/opinii — [commit 7](https://github.com/zezuul/po26/commit/8320b3056984ff9c6763df1433142b94066ca9f6)
+- ~~**5.0** Heroku~~ — pominięte
+
+**Kod:** [zadanie7/](zadanie7/)
+
+Windows (Docker): `cd zadanie7 && run.bat` → http://localhost:8080
