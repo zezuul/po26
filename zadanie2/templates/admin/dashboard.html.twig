@@ -1,0 +1,12 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content_title %}Panel administracyjny{% endblock %}
+
+{% block main %}
+    <p>Zarządzaj produktami, kategoriami i klientami z menu po lewej stronie.</p>
+    <ul>
+        <li><a href="{{ ea_url().setController('App\\Controller\\Admin\\ProductCrudController').setAction('index') }}">Produkty</a></li>
+        <li><a href="{{ ea_url().setController('App\\Controller\\Admin\\CategoryCrudController').setAction('index') }}">Kategorie</a></li>
+        <li><a href="{{ ea_url().setController('App\\Controller\\Admin\\CustomerCrudController').setAction('index') }}">Klienci</a></li>
+    </ul>
+{% endblock %}

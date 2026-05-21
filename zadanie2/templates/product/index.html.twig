@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produkty{% endblock %}
+
+{% block body %}
+<div class="card">
+    <h1>Produkty</h1>
+    <p><a href="{{ path('products_new') }}" class="btn btn-primary">Dodaj produkt</a></p>
+    <table>
+        <thead>
+            <tr><th>ID</th><th>Nazwa</th><th>Cena</th><th>Stan</th><th>Kategoria</th><th>Akcje</th></tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price|number_format(2, ',', ' ') }} PLN</td>
+                <td>{{ product.stock }}</td>
+                <td>{{ product.category ? product.category.name : '—' }}</td>
+                <td class="actions">
+                    <a href="{{ path('products_show', {id: product.id}) }}" class="btn btn-secondary">Pokaż</a>
+                    <a href="{{ path('products_edit', {id: product.id}) }}" class="btn btn-primary">Edytuj</a>
+                    <form method="post" action="{{ path('products_delete', {id: product.id}) }}" style="display:inline" onsubmit="return confirm('Usunąć produkt?');">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ product.id) }}">
+                        <button type="submit" class="btn btn-danger">Usuń</button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="6">Brak produktów.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

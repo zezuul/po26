@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="card">
+    <h1>{{ title }}</h1>
+    <p><a href="{{ path(new_route) }}" class="btn btn-primary">Dodaj nowy</a></p>
+    <table>
+        <thead>
+            <tr>
+                {% for header in headers %}
+                    <th>{{ header }}</th>
+                {% endfor %}
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+                <tr>
+                    {% for cell in row.cells %}
+                        <td>{{ cell }}</td>
+                    {% endfor %}
+                    <td class="actions">
+                        <a href="{{ path(show_route, {id: row.id}) }}" class="btn btn-secondary">Pokaż</a>
+                        <a href="{{ path(edit_route, {id: row.id}) }}" class="btn btn-primary">Edytuj</a>
+                        <form method="post" action="{{ path(delete_route, {id: row.id}) }}" style="display:inline" onsubmit="return confirm('Usunąć?');">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ row.id) }}">
+                            <button type="submit" class="btn btn-danger">Usuń</button>
+                        </form>
+                    </td>
+                </tr>
+            {% else %}
+                <tr><td colspan="{{ headers|length + 1 }}">Brak rekordów.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

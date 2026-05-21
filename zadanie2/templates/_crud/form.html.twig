@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="card">
+    <h1>{{ title }}</h1>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <p style="margin-top:1rem">
+            <button type="submit" class="btn btn-primary">Zapisz</button>
+            <a href="{{ cancel_path }}" class="btn btn-secondary">Anuluj</a>
+        </p>
+    {{ form_end(form) }}
+</div>
+{% endblock %}

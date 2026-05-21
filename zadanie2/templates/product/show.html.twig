@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block body %}
+<div class="card">
+    <h1>{{ product.name }}</h1>
+    <p><strong>ID:</strong> {{ product.id }}</p>
+    <p><strong>Opis:</strong> {{ product.description ?? '—' }}</p>
+    <p><strong>Cena:</strong> {{ product.price|number_format(2, ',', ' ') }} PLN</p>
+    <p><strong>Stan:</strong> {{ product.stock }}</p>
+    <p><strong>Kategoria:</strong> {{ product.category ? product.category.name : '—' }}</p>
+    <p class="actions">
+        <a href="{{ path('products_edit', {id: product.id}) }}" class="btn btn-primary">Edytuj</a>
+        <a href="{{ path('products_index') }}" class="btn btn-secondary">Lista</a>
+    </p>
+</div>
+{% endblock %}

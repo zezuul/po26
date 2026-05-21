@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ customer.name }}{% endblock %}
+
+{% block body %}
+<div class="card">
+    <h1>{{ customer.name }}</h1>
+    <p><strong>ID:</strong> {{ customer.id }}</p>
+    <p><strong>E-mail:</strong> {{ customer.email }}</p>
+    <p><strong>Telefon:</strong> {{ customer.phone ?? '—' }}</p>
+    <p><strong>Adres:</strong> {{ customer.address ?? '—' }}</p>
+    <p class="actions">
+        <a href="{{ path('customers_edit', {id: customer.id}) }}" class="btn btn-primary">Edytuj</a>
+        <a href="{{ path('customers_index') }}" class="btn btn-secondary">Lista</a>
+    </p>
+</div>
+{% endblock %}

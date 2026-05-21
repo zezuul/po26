@@ -1,0 +1,26 @@
+# Zadanie 1 — Paradygmaty: Pascal
+
+- ✅ **3.0** Procedura do generowania 50 losowych liczb od 0 do 100 — [commit 1](https://github.com/zezuul/po26/commit/576ac6e522ca806197be25db4a617e735eae8afb)
+- ✅ **3.5** Procedura do sortowania liczb — [commit 1](https://github.com/zezuul/po26/commit/576ac6e522ca806197be25db4a617e735eae8afb)
+- ✅ **4.0** Dodanie parametrów do procedury losującej określającymi zakres losowania: `od`, `do`, `ile` — [commit 1](https://github.com/zezuul/po26/commit/576ac6e522ca806197be25db4a617e735eae8afb)
+- ✅ **4.5** 5 testów jednostkowych testujące procedury — [commit 1](https://github.com/zezuul/po26/commit/576ac6e522ca806197be25db4a617e735eae8afb)
+- ✅ **5.0** Skrypt w bashu do uruchamiania aplikacji w Pascalu via Docker — [commit 1](https://github.com/zezuul/po26/commit/576ac6e522ca806197be25db4a617e735eae8afb)
+
+**Kod:** [zadanie1/](zadanie1/)
+
+---
+
+# Zadanie 2 — Wzorce architektury: Symfony (PHP)
+
+- **3.0** Model Product + kontroler API CRUD (JSON) — `/api/products`
+- **3.5** Skrypty curl testujące endpointy — `zadanie2/scripts/`
+- **4.0** Dwa dodatkowe modele + API JSON — Category, Customer
+- **4.5** Widoki Twig dla wszystkich kontrolerów
+- **5.0** Panel administracyjny EasyAdmin — `/admin`
+
+**Kod:** [zadanie2/](zadanie2/)
+
+```bash
+cd zadanie2 && bash setup.sh
+```
+

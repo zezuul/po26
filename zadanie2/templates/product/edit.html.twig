@@ -1,0 +1,3 @@
+{% extends 'product/_form.html.twig' %}
+{% set form_title = 'Edycja: ' ~ product.name %}
+{% set cancel_path = path('products_show', {id: product.id}) %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Strona główna — PO26{% endblock %}
+
+{% block body %}
+<div class="card">
+    <h1>Sklep — Zadanie 2 (Symfony)</h1>
+    <p>Aplikacja webowa z API JSON (CRUD) i widokami HTML.</p>
+    <ul>
+        <li><a href="{{ path('products_index') }}">Produkty</a> — <code>/api/products</code></li>
+        <li><a href="{{ path('categories_index') }}">Kategorie</a> — <code>/api/categories</code></li>
+        <li><a href="{{ path('customers_index') }}">Klienci</a> — <code>/api/customers</code></li>
+        <li><a href="{{ path('admin') }}">Panel administracyjny (EasyAdmin)</a></li>
+    </ul>
+</div>
+{% endblock %}

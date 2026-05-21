@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Klienci{% endblock %}
+
+{% block body %}
+<div class="card">
+    <h1>Klienci</h1>
+    <p><a href="{{ path('customers_new') }}" class="btn btn-primary">Dodaj klienta</a></p>
+    <table>
+        <thead><tr><th>ID</th><th>Nazwa</th><th>E-mail</th><th>Telefon</th><th>Akcje</th></tr></thead>
+        <tbody>
+            {% for customer in customers %}
+            <tr>
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.email }}</td>
+                <td>{{ customer.phone|default('—') }}</td>
+                <td class="actions">
+                    <a href="{{ path('customers_show', {id: customer.id}) }}" class="btn btn-secondary">Pokaż</a>
+                    <a href="{{ path('customers_edit', {id: customer.id}) }}" class="btn btn-primary">Edytuj</a>
+                    <form method="post" action="{{ path('customers_delete', {id: customer.id}) }}" style="display:inline" onsubmit="return confirm('Usunąć?');">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ customer.id) }}">
+                        <button type="submit" class="btn btn-danger">Usuń</button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="5">Brak klientów.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,3 @@
+{% extends 'customer/_form.html.twig' %}
+{% set form_title = 'Edycja: ' ~ customer.name %}
+{% set cancel_path = path('customers_show', {id: customer.id}) %}

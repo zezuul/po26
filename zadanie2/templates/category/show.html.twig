@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block body %}
+<div class="card">
+    <h1>{{ category.name }}</h1>
+    <p><strong>ID:</strong> {{ category.id }}</p>
+    <p><strong>Opis:</strong> {{ category.description ?? '—' }}</p>
+    <p><strong>Liczba produktów:</strong> {{ category.products|length }}</p>
+    <p class="actions">
+        <a href="{{ path('categories_edit', {id: category.id}) }}" class="btn btn-primary">Edytuj</a>
+        <a href="{{ path('categories_index') }}" class="btn btn-secondary">Lista</a>
+    </p>
+</div>
+{% endblock %}
