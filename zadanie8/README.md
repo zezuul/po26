@@ -2,7 +2,7 @@
 
 Kopia sklepu z **zadanie 5** z rozszerzeniem o **rejestrację**, **logowanie**, **CSRF** oraz **synchronizację koszyka** (`localStorage` + zdarzenie `storage` między kartami). Testy automatyczne w **Playwright** (TypeScript).
 
-**Commit:** [zadanie8](https://github.com/zezuul/po26/commit/2c9e0d89e29b88853b10204da817dbad3bd01682)  
+**Commit:** [task8](https://github.com/zezuul/po26/commit/4f3aafcd5551f16baf444505590b6a16498df2be)  
 **Demo:** [demos/zadanie8.mp4](../demos/zadanie8.mp4)
 
 | Punkty | Opis                                                | Lokalizacja                              |

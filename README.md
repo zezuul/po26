@@ -95,11 +95,11 @@
 
 # Zadanie 8 — Testy: Playwright (React)
 
-- ✅ **3.0** Walidacja formularza rejestracji (pola wymagane, błędny e-mail) — [commit 8](https://github.com/zezuul/po26/commit/2c9e0d89e29b88853b10204da817dbad3bd01682)
-- ✅ **3.5** Testy XSS na aplikacji React — [commit 8](https://github.com/zezuul/po26/commit/2c9e0d89e29b88853b10204da817dbad3bd01682)
-- ✅ **4.0** Koszyk w wielu kartach — spójność stanu — [commit 8](https://github.com/zezuul/po26/commit/2c9e0d89e29b88853b10204da817dbad3bd01682)
-- ✅ **4.5** Logowanie + ochrona CSRF (strona ataku) — [commit 8](https://github.com/zezuul/po26/commit/2c9e0d89e29b88853b10204da817dbad3bd01682)
-- ✅ **5.0** Scenariusz E2E Playwright (≥50 asercji) — [commit 8](https://github.com/zezuul/po26/commit/2c9e0d89e29b88853b10204da817dbad3bd01682)
+- ✅ **3.0** Walidacja formularza rejestracji (pola wymagane, błędny e-mail) — [commit 8](https://github.com/zezuul/po26/commit/4f3aafcd5551f16baf444505590b6a16498df2be)
+- ✅ **3.5** Testy XSS na aplikacji React — [commit 8](https://github.com/zezuul/po26/commit/4f3aafcd5551f16baf444505590b6a16498df2be)
+- ✅ **4.0** Koszyk w wielu kartach — spójność stanu — [commit 8](https://github.com/zezuul/po26/commit/4f3aafcd5551f16baf444505590b6a16498df2be)
+- ✅ **4.5** Logowanie + ochrona CSRF (strona ataku) — [commit 8](https://github.com/zezuul/po26/commit/4f3aafcd5551f16baf444505590b6a16498df2be)
+- ✅ **5.0** Scenariusz E2E Playwright (≥50 asercji) — [commit 8](https://github.com/zezuul/po26/commit/4f3aafcd5551f16baf444505590b6a16498df2be)
 
 **Kod:** [zadanie8/](zadanie8/)  
 **Demo:** [demos/zadanie8.mp4](demos/zadanie8.mp4)
