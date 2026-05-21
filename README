@@ -46,3 +46,16 @@
 
 **Kod:** [zadanie4/](zadanie4/)  
 **Demo:** [demos/zadanie4.mp4](demos/zadanie4.mp4)
+
+---
+
+# Zadanie 5 — Wzorce behawioralne: React (TypeScript)
+
+- ✅ **3.0** Komponenty Produkty (GET) i Płatności (POST do API) — [commit 5](https://github.com/zezuul/po26/commit/446ecbbb3b426f25cf75ca88b69023b1a58ce8de)
+- ✅ **3.5** Komponent Koszyk + routing między widokami — [commit 5](https://github.com/zezuul/po26/commit/446ecbbb3b426f25cf75ca88b69023b1a58ce8de)
+- ✅ **4.0** Stan koszyka — `useState`, `useContext`, `useEffect` — [commit 5](https://github.com/zezuul/po26/commit/446ecbbb3b426f25cf75ca88b69023b1a58ce8de)
+- ✅ **4.5** Docker Compose — frontend + backend — [commit 5](https://github.com/zezuul/po26/commit/446ecbbb3b426f25cf75ca88b69023b1a58ce8de)
+- ✅ **5.0** axios + CORS na serwerze Express — [commit 5](https://github.com/zezuul/po26/commit/446ecbbb3b426f25cf75ca88b69023b1a58ce8de)
+
+**Kod:** [zadanie5/](zadanie5/)  
+**Demo:** [demos/zadanie5.mp4](demos/zadanie5.mp4)
