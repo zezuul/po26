@@ -12,15 +12,11 @@
 
 # Zadanie 2 — Wzorce architektury: Symfony (PHP)
 
-- **3.0** Model Product + kontroler API CRUD (JSON) — `/api/products`
-- **3.5** Skrypty curl testujące endpointy — `zadanie2/scripts/`
-- **4.0** Dwa dodatkowe modele + API JSON — Category, Customer
-- **4.5** Widoki Twig dla wszystkich kontrolerów
-- **5.0** Panel administracyjny EasyAdmin — `/admin`
+- ✅ **3.0** Model Product + kontroler API CRUD (JSON) — [commit 2](https://github.com/zezuul/po26/commit/9e9bf5db10924921d049874a17cae435ef4f601a)
+- ✅ **3.5** Skrypty curl testujące endpointy — [commit 2](https://github.com/zezuul/po26/commit/9e9bf5db10924921d049874a17cae435ef4f601a)
+- ✅ **4.0** Dwa dodatkowe modele + API JSON — Category, Customer — [commit 2](https://github.com/zezuul/po26/commit/9e9bf5db10924921d049874a17cae435ef4f601a)
+- ✅ **4.5** Widoki Twig dla wszystkich kontrolerów — [commit 2](https://github.com/zezuul/po26/commit/9e9bf5db10924921d049874a17cae435ef4f601a)
+- ✅ **5.0** Panel administracyjny EasyAdmin — `/admin` — [commit 2](https://github.com/zezuul/po26/commit/9e9bf5db10924921d049874a17cae435ef4f601a)
 
 **Kod:** [zadanie2/](zadanie2/)
-
-```bash
-cd zadanie2 && bash setup.sh
-```
 
