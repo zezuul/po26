@@ -37,11 +37,20 @@ cd zadanie5/server && npm install && npm run lint
 
 ## SonarCloud
 
-1. Załóż projekt na [sonarcloud.io](https://sonarcloud.io) — klucz `zezuul_po26`, organizacja `zezuul`.
-2. W GitHub → Settings → Secrets → `SONAR_TOKEN`.
-3. Workflow `sonarcloud.yml` uruchomi skan.
+1. Projekt na [sonarcloud.io](https://sonarcloud.io) — klucz `zezuul_po26`, organizacja `zezuul`.
+2. GitHub → **Settings → Secrets → Actions** → secret `SONAR_TOKEN` (token z SonarCloud: *My Account → Security*).
+3. Push na `main` lub ręcznie: **Actions → SonarCloud → Run workflow**.
 
-Badge w głównym `README`.
+### Badge pokazuje „Quality Gate not computed”
+
+To normalne **przed pierwszym udanym skanem**. Zrób:
+
+1. Sprawdź workflow **SonarCloud** na GitHubie — musi być **zielony**.
+2. Jeśli czerwony: brak lub zły `SONAR_TOKEN`, albo błąd builda (Gradle/Go).
+3. Po zielonym jobie odczekaj 2–5 min i odśwież [podsumowanie projektu](https://sonarcloud.io/summary/new_code?id=zezuul_po26).
+4. Badge w `README` zmieni się na **Passed** / **Failed** dopiero po obliczeniu Quality Gate.
+
+Badge w głównym `README.md`.
 
 ## CodeQL
 
