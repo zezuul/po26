@@ -30,7 +30,7 @@ app.get('/api/products', (_req, res) => {
 app.post('/api/payments', (req, res) => {
   const { cardHolder, email, items, total } = req.body;
 
-  if (!cardHolder || !email || !items?.length || total == null) {
+  if (!cardHolder || !email || !items?.length || total === null || total === undefined) {
     return res.status(400).json({
       success: false,
       message: 'Wymagane: cardHolder, email, items, total',

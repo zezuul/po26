@@ -1,0 +1,7 @@
+{
+  "name": "safe-merge",
+  "version": "1.0.1",
+  "description": "Bezpieczne scalanie obiektów — poprawka po CodeQL",
+  "main": "index.js",
+  "license": "MIT"
+}

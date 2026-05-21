@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { submitPayment } from '../api';
 import { useCart } from '../context/CartContext';
@@ -10,6 +10,15 @@ export function Payments() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const redirectTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
+
+  useEffect(() => {
+    return () => {
+      if (redirectTimeoutRef.current) {
+        clearTimeout(redirectTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -35,9 +44,11 @@ export function Payments() {
       });
       setStatus(result.message || 'Płatność OK');
       clearCart();
-      setTimeout(() => navigate('/'), 2000);
-    } catch {
-      setStatus('Błąd wysyłki płatności do serwera');
+      redirectTimeoutRef.current = setTimeout(() => navigate('/'), 2000);
+    } catch (error: unknown) {
+      const message =
+        error instanceof Error ? error.message : 'Błąd wysyłki płatności do serwera';
+      setStatus(message);
     } finally {
       setLoading(false);
     }
@@ -57,27 +68,35 @@ export function Payments() {
     <section>
       <h2>Płatności</h2>
       <p className="info">Dane wysyłane do serwera (axios POST /api/payments)</p>
-      <p>Do zapłaty: <strong>{total.toFixed(2)} PLN</strong></p>
+      <p>
+        Do zapłaty: <strong>{total.toFixed(2)} PLN</strong>
+      </p>
 
       <form onSubmit={handleSubmit} className="form">
-        <label>
+        <label htmlFor="cardHolder">
           Imię i nazwisko na karcie
           <input
+            id="cardHolder"
+            name="cardHolder"
             value={cardHolder}
             onChange={(e) => setCardHolder(e.target.value)}
             required
+            autoComplete="name"
           />
         </label>
-        <label>
+        <label htmlFor="email">
           E-mail
           <input
+            id="email"
+            name="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            autoComplete="email"
           />
         </label>
-        <button type="submit" disabled={loading}>
+        <button type="submit" disabled={loading} aria-busy={loading}>
           {loading ? 'Wysyłanie…' : 'Zapłać (mock)'}
         </button>
       </form>

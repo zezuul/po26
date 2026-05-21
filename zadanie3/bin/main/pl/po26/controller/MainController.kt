@@ -18,6 +18,11 @@ class MainController(
     private val authorizationService: AuthorizationService,
 ) {
 
+    companion object {
+        private const val MSG_AUTH_OK = "Autoryzacja poprawna"
+        private const val MSG_AUTH_FAIL = "Nieprawidłowa nazwa użytkownika lub hasło"
+    }
+
     private val items: List<Item> = listOf(
         Item(1, "Laptop", "Elektronika"),
         Item(2, "Biurko", "Meble"),
@@ -34,7 +39,7 @@ class MainController(
         val success = authorizationService.authorize(request.username, request.password)
         val response = AuthResponse(
             success = success,
-            message = if (success) "Autoryzacja poprawna" else "Nieprawidłowa nazwa użytkownika lub hasło",
+            message = if (success) MSG_AUTH_OK else MSG_AUTH_FAIL,
             singletonMode = authorizationService.singletonMode(),
             singletonInstanceId = authorizationService.singletonInstanceId(),
         )

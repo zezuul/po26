@@ -1,3 +1,10 @@
+# PO26 — Projekt obiektowy
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=zezuul_po26&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=zezuul_po26)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=zezuul_po26&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=zezuul_po26)
+
+---
+
 # Zadanie 1 — Paradygmaty: Pascal
 
 - ✅ **3.0** Procedura do generowania 50 losowych liczb od 0 do 100 — [commit 1](https://github.com/zezuul/po26/commit/576ac6e522ca806197be25db4a617e735eae8afb)
@@ -59,3 +66,20 @@
 
 **Kod:** [zadanie5/](zadanie5/)  
 **Demo:** [demos/zadanie5.mp4](demos/zadanie5.mp4)
+
+---
+
+# Zadanie 6 — Zapaszki (jakość kodu)
+
+- **3.0** Husky + lint-staged — lint przed commitem
+- **3.5** Sonar / ESLint — bugi w aplikacji klienckiej (`zadanie5/client`)
+- **4.0** CodeQL — skan i poprawka OSS ([codeql-oss/](zadanie6/codeql-oss/))
+- **4.5** Code Smell (Kotlin, Go, JS) + badge SonarCloud (powyżej)
+- **5.0** GitHub Actions — [lint.yml](.github/workflows/lint.yml), [codeql.yml](.github/workflows/codeql.yml)
+
+**Kod:** [zadanie6/](zadanie6/)
+
+```bash
+npm install          # husky w katalogu głównym
+cd zadanie5/client && npm run lint
+```

@@ -1,0 +1,19 @@
+{
+  "name": "po26",
+  "private": true,
+  "scripts": {
+    "prepare": "husky",
+    "lint": "npm run lint --prefix zadanie5/client && npm run lint --prefix zadanie5/server",
+    "lint:client": "npm run lint --prefix zadanie5/client",
+    "lint:server": "npm run lint --prefix zadanie5/server"
+  },
+  "devDependencies": {
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.7"
+  },
+  "lint-staged": {
+    "zadanie5/client/**/*.{ts,tsx}": "npm run lint --prefix zadanie5/client",
+    "zadanie5/server/**/*.js": "npm run lint --prefix zadanie5/server",
+    "zadanie4/**/*.go": "gofmt -w"
+  }
+}

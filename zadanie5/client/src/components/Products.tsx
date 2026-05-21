@@ -12,7 +12,11 @@ export function Products() {
   useEffect(() => {
     fetchProducts()
       .then(setProducts)
-      .catch(() => setError('Nie udało się pobrać produktów z serwera'))
+      .catch((err: unknown) => {
+        const msg =
+          err instanceof Error ? err.message : 'Nie udało się pobrać produktów z serwera';
+        setError(msg);
+      })
       .finally(() => setLoading(false));
   }, []);
 
@@ -29,7 +33,7 @@ export function Products() {
             <h3>{p.name}</h3>
             <p className="muted">{p.category}</p>
             <p className="price">{p.price.toFixed(2)} PLN</p>
-            <button type="button" onClick={() => addToCart(p)}>
+            <button type="button" onClick={() => addToCart(p)} aria-label={`Dodaj ${p.name} do koszyka`}>
               Do koszyka
             </button>
           </article>
