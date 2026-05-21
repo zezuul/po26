@@ -20,3 +20,15 @@
 
 **Kod:** [zadanie2/](zadanie2/)
 
+---
+
+# Zadanie 3 — Wzorce kreacyjne: Spring Boot (Kotlin)
+
+- ✅ **3.0** Kontroler + lista danych w JSON — [commit 3](https://github.com/zezuul/po26/commit/615df72490eaa9f7c9ea33db03cae9847558d614)
+- ✅ **3.5** Mock autoryzacji jako Singleton **eager** — [commit 3](https://github.com/zezuul/po26/commit/615df72490eaa9f7c9ea33db03cae9847558d614)
+- ✅ **4.0** Obsługa loginu i hasła od użytkownika — [commit 3](https://github.com/zezuul/po26/commit/615df72490eaa9f7c9ea33db03cae9847558d614)
+- ✅ **4.5** Wstrzyknięcie serwisu do kontrolera (constructor injection) — [commit 3](https://github.com/zezuul/po26/commit/615df72490eaa9f7c9ea33db03cae9847558d614)
+- ✅ **5.0** Opcjonalna wersja Singletona **lazy** — profil `lazy` — [commit 3](https://github.com/zezuul/po26/commit/615df72490eaa9f7c9ea33db03cae9847558d614)
+
+**Kod:** [zadanie3/](zadanie3/)
+
