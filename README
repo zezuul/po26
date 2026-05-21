@@ -6,7 +6,8 @@
 - ✅ **4.5** 5 testów jednostkowych testujące procedury — [commit 1](https://github.com/zezuul/po26/commit/576ac6e522ca806197be25db4a617e735eae8afb)
 - ✅ **5.0** Skrypt w bashu do uruchamiania aplikacji w Pascalu via Docker — [commit 1](https://github.com/zezuul/po26/commit/576ac6e522ca806197be25db4a617e735eae8afb)
 
-**Kod:** [zadanie1/](zadanie1/)
+**Kod:** [zadanie1/](zadanie1/)  
+**Demo:** [demos/task1.mp4](demos/task1.mp4)
 
 ---
 
@@ -30,5 +31,5 @@
 - ✅ **4.5** Wstrzyknięcie serwisu do kontrolera (constructor injection) — [commit 3](https://github.com/zezuul/po26/commit/615df72490eaa9f7c9ea33db03cae9847558d614)
 - ✅ **5.0** Opcjonalna wersja Singletona **lazy** — profil `lazy` — [commit 3](https://github.com/zezuul/po26/commit/615df72490eaa9f7c9ea33db03cae9847558d614)
 
-**Kod:** [zadanie3/](zadanie3/)
-
+**Kod:** [zadanie3/](zadanie3/)  
+**Demo:** [demos/zadanie3.mp4](demos/zadanie3.mp4)

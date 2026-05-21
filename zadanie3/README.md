@@ -21,6 +21,29 @@ cd zadanie3
 gradle bootRun
 ```
 
+Windows (bez literówki w nazwie zadania):
+
+```bat
+run.bat
+```
+
+### Brak pamięci RAM / „Plik stronicowania jest za mały”
+
+Użyj lżejszego startu (jeden proces Java, bez `bootRun`):
+
+```bat
+run-light.bat
+```
+
+Albo ręcznie:
+
+```bat
+gradle --no-daemon bootJar
+java -Xms64m -Xmx256m -jar build\libs\zadanie3-1.0.0.jar
+```
+
+Komunikat `DOSKEY is not recognized` można zignorować — to ostrzeżenie Gradle na Windows, nie błąd aplikacji.
+
 Aplikacja: http://localhost:8081
 
 ### Wybór Singletona
