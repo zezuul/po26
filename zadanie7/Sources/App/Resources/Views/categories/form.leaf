@@ -1,0 +1,16 @@
+#extend("base"):
+    #export("title"): #(title)
+    #export("body"):
+        <section class="card">
+            <h2>#(title)</h2>
+            <form method="post" action="#(action)">
+                <label>Nazwa
+                    <input type="text" name="name" required value="#if(category):#(category.name)#endif">
+                </label>
+                <label>Opis
+                    <textarea name="description">#if(category):#(category.description)#endif</textarea>
+                </label>
+                <button type="submit" class="btn">Zapisz</button>
+                <a href="/categories">Anuluj</a>
+            </form>
+        </section>

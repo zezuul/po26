@@ -1,0 +1,33 @@
+#extend("base"):
+    #export("title"): Produkty
+    #export("body"):
+        <section class="card">
+            <div class="toolbar">
+                <h2>Produkty</h2>
+                <a class="btn" href="/products/create">Dodaj produkt</a>
+            </div>
+            #if(fromCache):
+                <p class="badge">Dane z cache Redis</p>
+            #endif
+            <table>
+                <thead>
+                    <tr><th>Nazwa</th><th>Cena</th><th>Kategoria</th><th>Opinie</th><th></th></tr>
+                </thead>
+                <tbody>
+                    #for(product in products):
+                        <tr>
+                            <td><a href="/products/#(product.id)">#(product.name)</a></td>
+                            <td>#(product.price) PLN</td>
+                            <td>#(product.categoryName)</td>
+                            <td>#(product.reviewCount)</td>
+                            <td class="actions">
+                                <a href="/products/#(product.id)/edit">Edytuj</a>
+                                <form method="post" action="/products/#(product.id)/delete" class="inline">
+                                    <button type="submit" class="link danger">Usuń</button>
+                                </form>
+                            </td>
+                        </tr>
+                    #endfor
+                </tbody>
+            </table>
+        </section>

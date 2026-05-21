@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; margin: 0; background: #f0f4f8; color: #1e293b; }
+header { background: #0d9488; color: #fff; padding: 1rem 2rem; }
+header a { color: #fff; text-decoration: none; }
+header h1 { margin: 0 0 0.5rem; font-size: 1.4rem; }
+nav a { margin-right: 1.25rem; font-weight: 500; }
+main { max-width: 960px; margin: 1.5rem auto; padding: 0 1rem; }
+.card { background: #fff; padding: 1.25rem; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.toolbar { display: flex; justify-content: space-between; align-items: center; }
+table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+th, td { text-align: left; padding: 0.6rem; border-bottom: 1px solid #e2e8f0; }
+.btn { display: inline-block; background: #0d9488; color: #fff; padding: 0.45rem 0.9rem; border-radius: 6px; text-decoration: none; border: none; cursor: pointer; }
+.badge { background: #fef3c7; color: #92400e; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.85rem; }
+label { display: block; margin: 0.75rem 0; }
+input, textarea, select { display: block; width: 100%; max-width: 400px; margin-top: 0.25rem; padding: 0.5rem; }
+.actions { white-space: nowrap; }
+.inline { display: inline; margin-left: 0.5rem; }
+button.link { background: none; border: none; color: #0d9488; cursor: pointer; text-decoration: underline; padding: 0; }
+button.link.danger { color: #dc2626; }
+footer { text-align: center; color: #64748b; padding: 2rem; font-size: 0.9rem; }

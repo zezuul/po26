@@ -1,0 +1,7 @@
+.build
+.swiftpm
+db.sqlite
+.git
+README.md
+docker-compose.yml
+*.md

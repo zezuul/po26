@@ -1,0 +1,33 @@
+#extend("base"):
+    #export("title"): #(title)
+    #export("body"):
+        <section class="card">
+            <h2>#(title)</h2>
+            <form method="post" action="#(action)">
+                #if(product):
+                    <input type="hidden" name="id" value="#(product.id)">
+                #endif
+                <label>Nazwa
+                    <input type="text" name="name" required value="#if(product):#(product.name)#endif">
+                </label>
+                <label>Cena (PLN)
+                    <input type="number" step="0.01" name="price" required value="#if(product):#(product.price)#endif">
+                </label>
+                <label>Opis
+                    <textarea name="description">#if(product):#(product.description)#endif</textarea>
+                </label>
+                <label>Kategoria
+                    <select name="categoryID" required>
+                        #for(cat in categories):
+                            <option value="#(cat.id)"
+                                #if(product):
+                                    #if(product.categoryID == cat.id.uuidString):selected#endif
+                                #endif
+                            >#(cat.name)</option>
+                        #endfor
+                    </select>
+                </label>
+                <button type="submit" class="btn">Zapisz</button>
+                <a href="/products">Anuluj</a>
+            </form>
+        </section>

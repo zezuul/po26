@@ -1,0 +1,18 @@
+#extend("base"):
+    #export("title"): #(category.name)
+    #export("body"):
+        <section class="card">
+            <h2>#(category.name)</h2>
+            <p>#(category.description)</p>
+            <p>Produktów w kategorii: #(category.productCount)</p>
+            <h3>Produkty</h3>
+            <ul>
+                #for(product in products):
+                    <li><a href="/products/#(product.id)">#(product.name)</a> — #(product.price) PLN</li>
+                #endfor
+            </ul>
+            <p>
+                <a href="/categories/#(category.id)/edit">Edytuj</a> |
+                <a href="/categories">Lista</a>
+            </p>
+        </section>

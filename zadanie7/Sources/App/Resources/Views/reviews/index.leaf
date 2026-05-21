@@ -1,0 +1,33 @@
+#extend("base"):
+    #export("title"): Opinie
+    #export("body"):
+        <section class="card">
+            <div class="toolbar">
+                <h2>Opinie</h2>
+                <a class="btn" href="/reviews/create">Dodaj opinię</a>
+            </div>
+            #if(fromCache):
+                <p class="badge">Dane z cache Redis</p>
+            #endif
+            <table>
+                <thead>
+                    <tr><th>Autor</th><th>Ocena</th><th>Produkt</th><th>Komentarz</th><th></th></tr>
+                </thead>
+                <tbody>
+                    #for(review in reviews):
+                        <tr>
+                            <td>#(review.author)</td>
+                            <td>#(review.rating)/5</td>
+                            <td>#(review.productName)</td>
+                            <td>#(review.comment)</td>
+                            <td class="actions">
+                                <a href="/reviews/#(review.id)/edit">Edytuj</a>
+                                <form method="post" action="/reviews/#(review.id)/delete" class="inline">
+                                    <button type="submit" class="link danger">Usuń</button>
+                                </form>
+                            </td>
+                        </tr>
+                    #endfor
+                </tbody>
+            </table>
+        </section>

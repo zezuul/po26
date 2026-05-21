@@ -1,0 +1,30 @@
+#extend("base"):
+    #export("title"): #(title)
+    #export("body"):
+        <section class="card">
+            <h2>#(title)</h2>
+            <form method="post" action="#(action)">
+                <label>Autor
+                    <input type="text" name="author" required value="#if(review):#(review.author)#endif">
+                </label>
+                <label>Ocena (1–5)
+                    <input type="number" name="rating" min="1" max="5" required value="#if(review):#(review.rating)#else:5#endif">
+                </label>
+                <label>Produkt
+                    <select name="productID" required>
+                        #for(product in products):
+                            <option value="#(product.id)"
+                                #if(review):
+                                    #if(review.productID == product.id.uuidString):selected#endif
+                                #endif
+                            >#(product.name)</option>
+                        #endfor
+                    </select>
+                </label>
+                <label>Komentarz
+                    <textarea name="comment" required>#if(review):#(review.comment)#endif</textarea>
+                </label>
+                <button type="submit" class="btn">Zapisz</button>
+                <a href="/reviews">Anuluj</a>
+            </form>
+        </section>

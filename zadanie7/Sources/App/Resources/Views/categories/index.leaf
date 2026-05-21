@@ -1,0 +1,32 @@
+#extend("base"):
+    #export("title"): Kategorie
+    #export("body"):
+        <section class="card">
+            <div class="toolbar">
+                <h2>Kategorie</h2>
+                <a class="btn" href="/categories/create">Dodaj kategorię</a>
+            </div>
+            #if(fromCache):
+                <p class="badge">Dane z cache Redis</p>
+            #endif
+            <table>
+                <thead>
+                    <tr><th>Nazwa</th><th>Opis</th><th>Produkty</th><th></th></tr>
+                </thead>
+                <tbody>
+                    #for(category in categories):
+                        <tr>
+                            <td><a href="/categories/#(category.id)">#(category.name)</a></td>
+                            <td>#(category.description)</td>
+                            <td>#(category.productCount)</td>
+                            <td class="actions">
+                                <a href="/categories/#(category.id)/edit">Edytuj</a>
+                                <form method="post" action="/categories/#(category.id)/delete" class="inline">
+                                    <button type="submit" class="link danger">Usuń</button>
+                                </form>
+                            </td>
+                        </tr>
+                    #endfor
+                </tbody>
+            </table>
+        </section>

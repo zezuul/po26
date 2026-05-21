@@ -1,0 +1,12 @@
+#extend("base"):
+    #export("title"): Strona główna
+    #export("body"):
+        <section class="card">
+            <h2>#(title)</h2>
+            <p>#(message)</p>
+            <ul>
+                <li><a href="/products">CRUD Produktów</a> — Fluent + Leaf</li>
+                <li><a href="/categories">CRUD Kategorii</a> — relacja z produktami</li>
+                <li><a href="/reviews">CRUD Opinii</a> — relacja z produktem</li>
+            </ul>
+        </section>

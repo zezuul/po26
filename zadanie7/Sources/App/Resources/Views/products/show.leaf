@@ -1,0 +1,19 @@
+#extend("base"):
+    #export("title"): #(product.name)
+    #export("body"):
+        <section class="card">
+            <h2>#(product.name)</h2>
+            <p><strong>Cena:</strong> #(product.price) PLN</p>
+            <p><strong>Kategoria:</strong> #(product.categoryName)</p>
+            <p><strong>Opis:</strong> #(product.description)</p>
+            <h3>Opinie (#(product.reviewCount))</h3>
+            <ul>
+                #for(review in reviews):
+                    <li><strong>#(review.author)</strong> (#(review.rating)/5): #(review.comment)</li>
+                #endfor
+            </ul>
+            <p>
+                <a href="/products/#(product.id)/edit">Edytuj</a> |
+                <a href="/products">Lista</a>
+            </p>
+        </section>
