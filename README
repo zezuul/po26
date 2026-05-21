@@ -33,3 +33,16 @@
 
 **Kod:** [zadanie3/](zadanie3/)  
 **Demo:** [demos/zadanie3.mp4](demos/zadanie3.mp4)
+
+---
+
+# Zadanie 4 — Wzorce strukturalne: Echo (Go)
+
+- ✅ **3.0** Aplikacja Echo + kontroler pogody — [commit 4](https://github.com/zezuul/po26/commit/344b2beb412326bfd132793aae6b84aedc5bf937)
+- ✅ **3.5** Model `Weather` (GORM) + seed lokalizacji przy starcie — [commit 4](https://github.com/zezuul/po26/commit/344b2beb412326bfd132793aae6b84aedc5bf937)
+- ✅ **4.0** Proxy pobierające dane z Open-Meteo — [commit 4](https://github.com/zezuul/po26/commit/344b2beb412326bfd132793aae6b84aedc5bf937)
+- ✅ **4.5** Zapis odczytu do bazy SQLite — [commit 4](https://github.com/zezuul/po26/commit/344b2beb412326bfd132793aae6b84aedc5bf937)
+- ✅ **5.0** Wiele lokalizacji w jednym zapytaniu (JSON) — [commit 4](https://github.com/zezuul/po26/commit/344b2beb412326bfd132793aae6b84aedc5bf937)
+
+**Kod:** [zadanie4/](zadanie4/)  
+**Demo:** [demos/zadanie4.mp4](demos/zadanie4.mp4)
