@@ -1,0 +1,44 @@
+# Lokalna / CI symulacja chmury — dwa kontenery Docker (serwer + klient)
+# Aplikacja: zadanie8 (React + Express + Playwright)
+
+services:
+  server:
+    build:
+      context: ../zadanie8/server
+      dockerfile: Dockerfile
+    image: po26-zadanie8-server:local
+    container_name: po26-server
+    restart: unless-stopped
+    ports:
+      - "${SERVER_PORT:-3011}:3011"
+    environment:
+      PORT: 3011
+      CORS_ORIGIN: ${CLIENT_PUBLIC_URL:-http://localhost:3010}
+      SESSION_SECRET: ${SESSION_SECRET:-po26-zadanie9-dev-secret}
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://localhost:3011/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  client:
+    build:
+      context: ../zadanie8/client
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:3011}
+    image: po26-zadanie8-client:local
+    container_name: po26-client
+    restart: unless-stopped
+    ports:
+      - "${CLIENT_PORT:-3010}:3000"
+    depends_on:
+      server:
+        condition: service_healthy
