@@ -103,3 +103,12 @@
 
 **Kod:** [zadanie8/](zadanie8/)  
 **Demo:** [demos/zadanie8.mp4](demos/zadanie8.mp4)
+
+---
+
+# Zadanie 9 — Chmura (Docker)
+
+- ✅ **3.0** Instancje Docker w chmurze (serwer + klient) — [commit 9](https://github.com/zezuul/po26/commit/829df656fedc60a46ee3bed444a1f81873f67cd3)
+
+**Kod:** [zadanie9/](zadanie9/) — aplikacja ze [zadanie8/](zadanie8/)  
+**Demo:** [demos/zadanie9.mp4](demos/zadanie9.mp4)
